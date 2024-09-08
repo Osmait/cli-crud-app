@@ -1,6 +1,7 @@
 import { Command } from "commander";
 import { version } from "./package.json";
 import { NoteServices } from "./services";
+import http from "http";
 import { NoteRepository } from "./repository";
 
 const program = new Command();
@@ -25,6 +26,22 @@ program
   .action(async () => {
     const result = await noteServices.findAll();
     console.log(result);
+  });
+program
+  .command("server <port>")
+  .description("init web server ")
+  .action(async (port: number) => {
+    const server = http.createServer(async (req, res) => {
+      // Enviar una respuesta simple
+      res.setHeader("Content-Type", "application/json"); // Establecer el tipo de contenido como JSON
+
+      const note = await noteServices.findAll();
+      res.writeHead(200);
+      res.end(JSON.stringify(note));
+    });
+    server.listen(port, () => {
+      console.log(`Servidor escuchando en http://localhost:${port}`);
+    });
   });
 
 program.parse();
