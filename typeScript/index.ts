@@ -12,10 +12,11 @@ program
   .description("Una aplicación CLI de ejemplo con Commander");
 
 program
-  .command("create <note>")
+  .command("create <name> <note>")
   .description("create note ")
-  .action(async (note: string) => {
-    await noteServices.save(note);
+  .action(async (note: string, name: string) => {
+    console.log(note, name);
+    await noteServices.save(note, name);
   });
 
 program
