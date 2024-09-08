@@ -11,6 +11,9 @@ importers:
       commander:
         specifier: ^12.1.0
         version: 12.1.0
+      ollama:
+        specifier: ^0.5.8
+        version: 0.5.8
     devDependencies:
       '@types/node':
         specifier: ^22.5.4
@@ -185,6 +188,9 @@ packages:
   get-tsconfig@4.8.0:
     resolution: {integrity: sha512-Pgba6TExTZ0FJAn1qkJAjIeKoDJ3CsI2ChuLohJnZl/tTU8MVrq3b+2t5UOPfRa4RMsorClBjJALkJUMjG1PAw==}
 
+  ollama@0.5.8:
+    resolution: {integrity: sha512-frBGdfSV34i7JybLZUeyCYDx0CMyDiG4On8xOK+cNRWM04HImhoWgIMpF4p7vTkQumadbSxOteR7SZyKqNmOXg==}
+
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
@@ -195,6 +201,9 @@ packages:
 
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+
+  whatwg-fetch@3.6.20:
+    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
 
 snapshots:
 
@@ -310,6 +319,10 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
+  ollama@0.5.8:
+    dependencies:
+      whatwg-fetch: 3.6.20
+
   resolve-pkg-maps@1.0.0: {}
 
   tsx@4.19.0:
@@ -320,3 +333,5 @@ snapshots:
       fsevents: 2.3.3
 
   undici-types@6.19.8: {}
+
+  whatwg-fetch@3.6.20: {}

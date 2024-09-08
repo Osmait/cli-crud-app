@@ -28,6 +28,12 @@ program
     console.log(result);
   });
 program
+  .command("summary")
+  .description("summary to note  ")
+  .action(async () => {
+    const result = await noteServices.summary();
+  });
+program
   .command("server <port>")
   .description("init web server ")
   .action(async (port: number) => {
